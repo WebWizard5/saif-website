@@ -17,6 +17,10 @@ html, body {
   background-color: var(--bg-dark);
   color: var(--text-light);
 }
+body {
+  padding-top: 90px; /* Adjust to navbar height */
+}
+
 
 /* Navbar */
 .navbar {
@@ -25,10 +29,23 @@ html, body {
   align-items: center;
   background-color: var(--bg-medium);
   padding: 1rem 2rem;
-  position: sticky;
+  position: fixed;          /* ← Changed from sticky to fixed */
   top: 0;
+  left: 0;
+  width: 100%;              /* ← Full width */
   z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Optional nice shadow */
 }
+
+.navbar-container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 
 .logo {
   font-size: 1.5rem;
@@ -300,11 +317,13 @@ section {
 
 .section {
   min-height: 100vh;
+  scroll-margin-top: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
+
 
 .profile-picture {
   display: flex;
@@ -333,6 +352,7 @@ section {
     flex-direction: column;
     align-items: flex-start;
     padding: 1rem;
+    
   }
 /* Profile picture for smaller screens */
 .profile-picture img {
@@ -401,4 +421,86 @@ section {
   .contact-info {
     font-size: 0.95rem;
   }
+}
+
+.project-card video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.project-images {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project-images img {
+  width: 48%;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* Ensure images inside project cards are styled consistently */
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Optional: Add hover effect for image cards */
+.project-card img:hover,
+.project-card video:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Equal to your navbar height */
+}
+
+/* ✅ Add this at the END of style.css */
+
+.section {
+  min-height: 100vh;
+  scroll-margin-top: 80px; /* Adjusts scroll to work with sticky navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Optional: keep smooth scroll globally */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ✅ Fix scroll offset under sticky navbar */
+html {
+  scroll-padding-top: 100px; /* Match your navbar height */
+}
+
+.section {
+  scroll-margin-top: 100px; /* Safe fallback */
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px; /* Adjust to your navbar height */
+}
+
+.section {
+  scroll-margin-top: 90px; /* Makes sure scrolling lands precisely */
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+.section {
+  scroll-margin-top: 90px;
 }

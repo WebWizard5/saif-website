@@ -1,23 +1,16 @@
-// Smooth scrolling with navbar offset
+// ✅ Smooth scrolling (pure CSS does the job, but we ensure support)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
     const targetId = this.getAttribute("href");
     const targetEl = document.querySelector(targetId);
-
-    const headerOffset = 80; // Adjust this based on your navbar height
-    const elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
-    const offsetPosition = elementPosition - headerOffset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
+    if (targetEl) {
+      targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   });
 });
 
-
-// Contact form handling
+// ✅ Contact form handler
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -37,7 +30,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   this.reset();
 });
 
-// Smooth cinematic scroll animation using GSAP
+// ✅ GSAP animations for sections
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.utils.toArray(".section").forEach((section, index) => {
@@ -53,7 +46,7 @@ gsap.utils.toArray(".section").forEach((section, index) => {
       y: 0,
       scale: 1,
       duration: 1.5,
-      delay: 0.15 * index, // Slight delay between sections
+      delay: 0.15 * index,
       ease: "power4.out",
       scrollTrigger: {
         trigger: section,
