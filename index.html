@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">MyPortfolio</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+ <section id="home" class="home-section section">
+    <div class="home-content">
+      <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
+      <p>A Passionate Web Developer</p>
+      <a href="#projects" class="btn">See My Work</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section section">
+  <div class="about-container">
+    <h2>About Me</h2>
+
+    <!-- Profile Picture -->
+    <div class="profile-picture">
+      <img src="watch.jpg" alt="Profile Picture of Alex Rayner" />
+    </div>
+
+    <p>Hello! I'm <strong>Alex Rayner</strong>, a self-taught Front-End Web Developer with a deep passion for creating elegant, functional, and accessible user experiences. With over 2 years of experience building responsive websites using HTML, CSS, and JavaScript, I bring creative ideas to life through code.</p>
+
+    <p>My journey started with curiosity and turned into a mission to develop user-focused interfaces. I enjoy solving problems and always strive to write clean, scalable code. Whether it's a simple landing page or a dynamic portfolio, I love bringing concepts into reality.</p>
+
+    <ul class="skills-list">
+      <li><span>&#x2714;</span> HTML5, CSS3, JavaScript</li>
+      <li><span>&#x2714;</span> Responsive Design</li>
+      <li><span>&#x2714;</span> UI/UX Basics</li>
+      <li><span>&#x2714;</span> Git & GitHub</li>
+    </ul>
+  </div>
+</section>
+
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section section">
+    <div class="projects-container">
+      <h2>My Projects</h2>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Portfolio Website</h3>
+          <p>A sleek, personal website showcasing my bio, projects, and contact information. Built using HTML, CSS, and JavaScript.</p>
+          <a href="#" target="_blank">View Demo</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Weather App</h3>
+          <p>An interactive weather application that fetches real-time data from an open API and displays the current conditions by city.</p>
+          <a href="#" target="_blank">View Demo</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Task Tracker</h3>
+          <p>A JavaScript-based to-do list app with add/remove functionality, local storage saving, and smooth animations.</p>
+          <a href="#" target="_blank">View Demo</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Product Landing Page</h3>
+          <p>A responsive landing page for a fictional startup, with modern UI components and mobile-first design.</p>
+          <a href="#" target="_blank">View Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Contact Section: ONLY ONE -->
+  <section id="contact" class="contact-section section">
+    <div class="contact-container">
+      <h2>Contact Me</h2>
+      <p>If you’d like to work together or have any questions, feel free to reach out using the form below.</p>
+
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+
+      <p class="form-status" id="formStatus"></p>
+
+      <div class="contact-info">
+        <h3>Other Ways to Reach Me</h3>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:alex.rayner@example.com">alex.rayner@example.com</a></li>
+          <li><strong>WhatsApp:</strong> <a href="https://wa.me/1234567890" target="_blank">+1 (234) 567-890</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/alexrayner" target="_blank">linkedin.com/in/alexrayner</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
