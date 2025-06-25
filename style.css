@@ -24,15 +24,17 @@ body {
 
 /* Navbar */
 .navbar {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
-  width: 100%;
   background-color: var(--bg-medium);
-  padding: 1rem 2rem;
+  width: 100%;
+  z-index: 1000;
   display: flex;
   justify-content: center;
-  z-index: 1000;
+  padding: 1rem 2rem;
 }
+
 
 .navbar-container {
   max-width: 1100px;
@@ -524,11 +526,3 @@ html {
   scroll-margin-top: 90px; /* Makes sure scrolling lands precisely */
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
-}
-
-.section {
-  scroll-margin-top: 90px;
-}

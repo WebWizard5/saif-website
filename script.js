@@ -33,26 +33,32 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
 // ✅ GSAP animations for sections
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.utils.toArray(".section").forEach((section, index) => {
-  gsap.fromTo(
-    section,
-    {
-      opacity: 0,
-      y: 120,
-      scale: 0.95,
-    },
-    {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      duration: 1.5,
-      delay: 0.15 * index,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: section,
-        start: "top 85%",
-        toggleActions: "play none none reverse"
+const isMobile = window.innerWidth < 768;
+
+if (!isMobile) {
+  // Only run GSAP on non-mobile
+  gsap.utils.toArray(".section").forEach((section, index) => {
+    gsap.fromTo(
+      section,
+      {
+        opacity: 0,
+        y: 120,
+        scale: 0.95,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1.5,
+        delay: 0.15 * index,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 85%",
+          toggleActions: "play none none reverse"
+        }
       }
-    }
-  );
-});
+    );
+  });
+}
+
