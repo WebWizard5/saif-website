@@ -24,28 +24,23 @@ body {
 
 /* Navbar */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
   background-color: var(--bg-medium);
   padding: 1rem 2rem;
-  position: fixed;          /* ← Changed from sticky to fixed */
-  top: 0;
-  left: 0;
-  width: 100%;              /* ← Full width */
-  z-index: 999;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Optional nice shadow */
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
 }
 
 .navbar-container {
   max-width: 1100px;
   width: 100%;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 
 .logo {
   font-size: 1.5rem;
@@ -67,6 +62,39 @@ body {
 
 .nav-links a:hover {
   color: var(--accent-pink);
+}
+
+/* Mobile responsive navbar */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    padding-top: 1rem;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: var(--bg-medium);
+    border-radius: 4px;
+  }
 }
 
 /* Home Section */
